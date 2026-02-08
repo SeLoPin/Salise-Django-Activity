@@ -1,0 +1,74 @@
+{% extends "core/base.html" %}
+
+{% block title %}CRUD UI – DRF Act 1 SALISE{% endblock %}
+
+{% block content %}
+  <section id="panel-departments" class="panel active" role="tabpanel">
+    <div class="panel-header">
+      <h2>Departments</h2>
+      <button type="button" class="btn btn-primary" data-action="create" data-entity="department">Add Department</button>
+    </div>
+    <div class="table-wrap">
+      <table class="crud-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Building ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="departments-tbody">
+          <tr><td colspan="4" class="empty">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="panel-employees" class="panel" role="tabpanel" hidden>
+    <div class="panel-header">
+      <h2>Employees</h2>
+      <button type="button" class="btn btn-primary" data-action="create" data-entity="employee">Add Employee</button>
+    </div>
+    <div class="table-wrap">
+      <table class="crud-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Department</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="employees-tbody">
+          <tr><td colspan="6" class="empty">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="panel-projects" class="panel" role="tabpanel" hidden>
+    <div class="panel-header">
+      <h2>Projects</h2>
+      <button type="button" class="btn btn-primary" data-action="create" data-entity="project">Add Project</button>
+    </div>
+    <div class="table-wrap">
+      <table class="crud-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Employee</th>
+            <th>Department</th>
+            <th>Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="projects-tbody">
+          <tr><td colspan="5" class="empty">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock %}

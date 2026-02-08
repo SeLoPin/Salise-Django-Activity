@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{{ csrf_token }}">
+  <title>{% block title %}CRUD – DRF Act 1{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'core/css/crud.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <h1>DRF Act 1 – Department, Employee, Project</h1>
+    <nav class="tabs" role="tablist">
+      <button type="button" class="tab active" data-tab="departments" role="tab">Departments</button>
+      <button type="button" class="tab" data-tab="employees" role="tab">Employees</button>
+      <button type="button" class="tab" data-tab="projects" role="tab">Projects</button>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <div id="modal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-title">Form</h2>
+        <button type="button" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+  <script src="{% static 'core/js/crud.js' %}"></script>
+</body>
+</html>
