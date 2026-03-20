@@ -7,6 +7,7 @@ from django.template.loader import render_to_string
 from django.views.generic import TemplateView
 from rest_framework import viewsets
 from rest_framework.routers import APIRootView
+
 from .models import Department, Employee, Project
 from .serializers import DepartmentSerializer, EmployeeSerializer, ProjectSerializer
 
@@ -17,7 +18,7 @@ class CRUDUIView(TemplateView):
 
 
 class APIRootWithButtonsView(APIRootView):
-    """API root."""
+    """API root with custom HTML template formatting."""
 
     def get_view_name(self):
         return 'Api'
@@ -34,42 +35,18 @@ class APIRootWithButtonsView(APIRootView):
 
 
 class DepartmentViewSet(viewsets.ModelViewSet):
-    """
-    CRUD via HTTP methods:
-    - GET    /api/departments/       → list (Read)
-    - POST   /api/departments/       → create (Create)
-    - GET    /api/departments/<id>/  → retrieve (Read one)
-    - PUT    /api/departments/<id>/  → update (Update)
-    - PATCH  /api/departments/<id>/  → partial_update (Update partial)
-    - DELETE /api/departments/<id>/  → destroy (Delete)
-    """
+    """ CRUD via HTTP methods for Departments. """
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):
-    """
-    CRUD via HTTP methods:
-    - GET    /api/employees/       → list (Read)
-    - POST   /api/employees/       → create (Create)
-    - GET    /api/employees/<id>/  → retrieve (Read one)
-    - PUT    /api/employees/<id>/  → update (Update)
-    - PATCH  /api/employees/<id>/  → partial_update (Update partial)
-    - DELETE /api/employees/<id>/  → destroy (Delete)
-    """
+    """ CRUD via HTTP methods for Employees. """
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
-    """
-    CRUD via HTTP methods:
-    - GET    /api/projects/       → list (Read)
-    - POST   /api/projects/       → create (Create)
-    - GET    /api/projects/<id>/  → retrieve (Read one)
-    - PUT    /api/projects/<id>/  → update (Update)
-    - PATCH  /api/projects/<id>/  → partial_update (Update partial)
-    - DELETE /api/projects/<id>/  → destroy (Delete)
-    """
+    """ CRUD via HTTP methods for Projects. """
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer

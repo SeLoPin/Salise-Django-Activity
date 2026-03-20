@@ -65,8 +65,8 @@ DATABASES = {
         'PORT': '5432',
         'OPTIONS': {
             'sslmode': 'require',
+        }
     }
-}
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -89,5 +89,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
 }
+
 # Allow your React app to fetch data from Django
 CORS_ALLOW_ALL_ORIGINS = True
