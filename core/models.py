@@ -15,7 +15,8 @@ class Department(models.Model):
         ordering = ['dept_id']
 
     def __str__(self):
-        return self.dept_name
+        # FIXED: Now displays the ID alongside the name (e.g., "1 - IT Department")
+        return f"{self.dept_id} - {self.dept_name}"
 
 
 class Employee(models.Model):
@@ -36,7 +37,8 @@ class Employee(models.Model):
         ordering = ['emp_id']
 
     def __str__(self):
-        return self.emp_name
+        # FIXED: Now displays the ID alongside the name
+        return f"{self.emp_id} - {self.emp_name}"
 
 
 class Project(models.Model):
@@ -61,4 +63,5 @@ class Project(models.Model):
         ordering = ['proj_id']
 
     def __str__(self):
-        return self.proj_name
+        # FIXED: Now displays the ID alongside the name
+        return f"{self.proj_id} - {self.proj_name}"
